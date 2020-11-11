@@ -1,14 +1,14 @@
-import os
 import jwt
 import uuid
 import hashlib
 from urllib.parse import urlencode
-
 import requests
+import crytocurrency.personal_info as pinfo
 
-access_key = os.environ['UPBIT_OPEN_API_ACCESS_KEY']
-secret_key = os.environ['UPBIT_OPEN_API_SECRET_KEY']
-server_url = os.environ['UPBIT_OPEN_API_SERVER_URL']
+info_data = pinfo.GetInfo
+access_key = info_data.getAccessKey()
+secret_key = info_data.getSecretKey()
+server_url = info_data.getServerURL()111
 
 query = {
     'state': 'done',
